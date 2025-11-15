@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Realtime Memory Allocation Tracker</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="controls">
+      <h2>Memory Tracker</h2>
+
+      <label>Total Memory (KB)
+        <input id="total_kb" type="number" value="1024" />
+      </label>
+
+      <label>Frame / Page Size (KB)
+        <input id="frame_kb" type="number" value="64" />
+      </label>
+
+      <label>Mode
+        <select id="mode-select">
+          <option value="Paging">Paging</option>
+          <option value="Segmentation">Segmentation</option>
+        </select>
+      </label>
+
+      <label>Algorithm
+        <select id="algo-select">
+          <option value="FIFO">FIFO</option>
+          <option value="LRU">LRU</option>
+        </select>
+      </label>
+
+      <button id="apply-btn" class="btn">Apply Configuration</button>
+
+      <hr>
+
+      <label>Process Size (KB)
+        <input id="proc-size" type="number" value="200" />
+      </label>
+
+      <div class="btn-row">
+        <button id="create-btn" class="btn">Create Process</button>
+        <button id="dealloc-btn" class="btn danger">Deallocate PID</button>
+      </div>
+
+      <div class="btn-row">
+        <button id="step-btn" class="btn">Step</button>
+        <button id="random-btn" class="btn">Random Access</button>
+      </div>
+
+      <hr>
+
+      <p id="status">Frames used: 0 / 0</p>
+      <p id="pf">Page Faults: 0</p>
+      <p id="allocs">Allocations: 0</p>
+      <p id="deallocs">Deallocations: 0</p>
+      <p id="plist">Processes: None</p>
+
+      <div class="sysmem">
+        <strong>System RAM</strong>
+        <p id="sys_total">Total: -- MB</p>
+        <p id="sys_used">Used: -- MB</p>
+        <p id="sys_pct">Usage: -- %</p>
+      </div>
+
+      <p class="note">Toggle the controls and watch memory usage update in real time.</p>
+    </aside>
+
+    <main class="visual">
+      <canvas id="memCanvas"></canvas>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
