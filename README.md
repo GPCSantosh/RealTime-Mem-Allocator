@@ -1,4 +1,8 @@
-#Real-Time Memory Allocation Tracker
+# Day 1 update: Real-Time Memory Allocation Tracker
+
+
+# Day 2 update: improved structure
+
 
 
 ## Installation & Setup (Day 3 Update)
