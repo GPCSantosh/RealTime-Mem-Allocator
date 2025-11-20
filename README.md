@@ -61,3 +61,17 @@ Real-Time Memory Allocation Tracker:
               +--------------------------------------+
 
 
+Day 6: Added FIFO vs LRU comparison table to README.md
+
+## FIFO vs LRU Comparison Table (Day 6 Update)
+
+| Feature / Property        | FIFO (First-In-First-Out)                      | LRU (Least Recently Used)                       |
+|---------------------------|------------------------------------------------|-------------------------------------------------|
+| Replacement Strategy      | Removes oldest loaded page                     | Removes least recently used page                |
+| Implementation Simplicity | Very easy to implement                         | Slightly complex (needs usage tracking)         |
+| Page Fault Rate           | Higher in most cases                           | Lower compared to FIFO                          |
+| Efficiency                | Less efficient                                 | More efficient in real-world workloads          |
+| Overhead                  | Minimal                                        | Requires maintaining recent-use information     |
+| Use Case                 | Simple simulations, teaching basics             | Practical systems with real workload patterns   |
+
+This table was added as part of the **Day 6 commit update**.
