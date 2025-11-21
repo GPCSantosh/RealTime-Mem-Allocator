@@ -75,3 +75,17 @@ Day 6: Added FIFO vs LRU comparison table to README.md
 | Use Case                 | Simple simulations, teaching basics             | Practical systems with real workload patterns   |
 
 This table was added as part of the **Day 6 commit update**.
+
+
+
+## Revision History (Day 7 Update)
+
+This section summarizes the day-wise progress and commits done for this project:
+
+- **Day 1:** Initial project setup with Flask backend, Socket.IO integration, and basic UI structure.
+- **Day 2:** Added README.md with project overview, purpose, and basic description.
+- **Day 3:** Documented installation and usage steps (how to run the app locally).
+- **Day 4:** Added detailed Features section describing core functionality of the system.
+- **Day 5:** Added System Architecture Diagram (ASCII representation) to explain client–server flow.
+- **Day 6:** Added FIFO vs LRU comparison table to highlight behavioral and performance differences.
+- **Day 7:** Added this Revision History section to document project evolution for CA2 evaluation.
