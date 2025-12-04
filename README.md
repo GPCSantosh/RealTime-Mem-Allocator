@@ -36,29 +36,33 @@ This section was added as part of Day 3 revision update.
 Below is a simplified visualization of the system architecture used in the
 Real-Time Memory Allocation Tracker:
 
-                 +----------------------------+
-                 |        Web Browser         |
-                 | (HTML, CSS, JS, Canvas UI) |
-                 +-------------+--------------+
-                               |
-                               |  Socket.IO (Real-time Events)
-                               v
-              +--------------------------------------+
-              |              Flask Backend            |
-              |   - Memory Manager Module             |
-              |   - Pager (FIFO / LRU)                |
-              |   - Process Handler                   |
-              |   - System RAM Monitor (psutil)       |
-              +-------------------+------------------+
-                                  |
-                                  | Internal Calls
-                                  v
-              +--------------------------------------+
-              |            Data Structures            |
-              |   - Frames                           |
-              |   - Page Tables                      |
-              |   - PID Mapping                      |
-              +--------------------------------------+
+       ┌──────────────────┐
+       │  User Interface  │  index.html / style.css
+       └───────┬──────────┘
+               │
+               ▼
+    ┌───────────────────────────────┐
+    │ Frontend JS (app.js)          │
+    │ - Socket.IO client            │
+    │ - Canvas visualization        │
+    │ - Buttons → backend actions   │
+    └───────────┬───────────────────┘
+                │ WebSockets
+                ▼
+    ┌────────────────────────────────────────┐
+    │ Backend (app.py)                      │
+    │ - Flask + Socket.IO                   │
+    │ - MemoryManager                       │
+    │ - Pager (FIFO/LRU)                    │
+    │ - Process creation/deallocation       │
+    │ - psutil RAM monitoring               │
+    │ - Background simulation threads       │
+    └───────────┬───────────────────────────┘
+                │
+                ▼
+        ┌───────────────────┐
+        │ Real-time Updates │
+        └───────────────────┘
 
 
 Day 6: Added FIFO vs LRU comparison table to README.md
